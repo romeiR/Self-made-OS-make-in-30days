@@ -25,5 +25,7 @@ RUN qemu-img create -f raw disk.img 200M
 RUN mkfs.fat -n "MIKAN OS" -s 2 -f 2 -R 32 -F 32 disk.img
 VOLUME /disk.img
 WORKDIR /root/mnt/EFI/BOOT
+WORKDIR /root
 ADD run_qemu.sh /root
+RUN chmod 777 run_qemu.sh
 RUN chmod 777 run_qemu.sh
