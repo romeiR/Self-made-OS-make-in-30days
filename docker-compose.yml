@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  app:
+    privileged: true
+    build: .
+    tty: true
+    image: my-app:latest
+    build: .
+    environment:
+      - DISPLAY=192.168.2.101:0.0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    network_mode: host
